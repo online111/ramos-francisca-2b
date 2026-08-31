@@ -22,5 +22,7 @@ h1 { margin: 14px 0 8px; font-size: clamp(2.1rem, 5vw, 3.5rem); }
 .archivo strong { display: block; }.archivo small { display: block; margin-top: 4px; color: #50656d; }
 .descargar { flex: 0 0 auto; padding: 9px 12px; border-radius: 10px; background: #145a7a; color: #fff; font-weight: bold; text-decoration: none; }
 .descargar:hover, .descargar:focus-visible { background: #0f4861; }
+.video-card { display:grid; grid-template-columns:170px 1fr; gap:17px; align-items:center; padding:14px; border-radius:14px; background:#edf8fc; border:1px solid #b9e1ef; }
+.video-card img { width:100%; border-radius:10px; display:block; }.video-card h3 { margin:0 0 7px; }.video-card p { margin:0 0 12px; line-height:1.4; }
 @media (max-width: 700px) { .ramos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 520px) { main { padding: 32px 16px; } .ramos { grid-template-columns: 1fr; } .ramo { min-height: 150px; } .archivo { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 520px) { main { padding: 32px 16px; } .ramos { grid-template-columns: 1fr; } .ramo { min-height: 150px; } .archivo { align-items: flex-start; flex-direction: column; } .video-card { grid-template-columns:1fr; } .video-card img { max-width:260px; } }
