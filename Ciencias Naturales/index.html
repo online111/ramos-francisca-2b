@@ -1,26 +1,26 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ciencias Naturales | Francisca</title><link rel="stylesheet" href="../estilos.css"><style>
 .prueba{margin-top:28px;padding:26px;border-radius:20px;background:#fff;box-shadow:0 8px 20px #24324a18}.prueba h2{margin-top:0}.progreso{height:12px;background:#dceef5;border-radius:999px;overflow:hidden;margin:14px 0 20px}.progreso div{height:100%;background:#40a86b;transition:width .2s}.pregunta{font-size:1.25rem;font-weight:bold;line-height:1.35;margin:0 0 16px}.opciones{display:grid;gap:10px}.opcion{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border:1px solid #b9e1ef;border-radius:12px;background:#f4fbfe;cursor:pointer}.opcion:hover{background:#e6f6fc}.opcion input{margin-top:4px}.controles{display:flex;justify-content:space-between;gap:12px;margin-top:22px}.quiz-boton{border:0;border-radius:10px;padding:10px 15px;background:#145a7a;color:#fff;font:inherit;font-weight:bold;cursor:pointer}.quiz-boton:disabled{opacity:.5;cursor:not-allowed}.resultado{padding:18px;border-radius:14px;background:#e8f7ee;text-align:center;font-size:1.12rem;line-height:1.5}.resultado strong{display:block;font-size:1.7rem;color:#167044;margin:7px 0}.opcion.correcta{background:#ffe2e2;border-color:#d43b3b;color:#8b1717;font-weight:bold}.opcion.incorrecta{background:#f1f3f5;border-color:#a7afb5}.respuesta{margin-top:16px;padding:14px;border-radius:12px;font-weight:bold;text-align:center}.acierto{background:#e2f8e8;color:#146c35}.error{background:#ffe6e6;color:#8b1717}@media(max-width:520px){.prueba{padding:19px}.controles{flex-direction:column}.quiz-boton{width:100%}}</style></head><body><main class="asignatura"><a class="volver" href="../index.html">← Volver a los ramos</a><h1>🌿 Ciencias Naturales</h1><section class="panel"><h2>Material de aprendizaje</h2><ul><li>Pruebas</li><li>Ejercicios tipo</li><li>Resúmenes interactivos</li></ul><h2>Archivos publicados</h2><div class="archivos"><article class="archivo"><div><strong>📄 Resumen - El agua</strong><small>Resumen para estudiar propiedades, estados y cambios del agua.</small></div><a class="descargar" href="Resumen - El agua.pdf">Ver o descargar</a></article><article class="archivo"><div><strong>✍️ Apuntes originales - El agua</strong><small>Transcripción completa en letra imprenta de las tres hojas originales.</small></div><a class="descargar" href="Apuntes originales - El agua (letra imprenta).pdf">Ver o descargar</a></article></div></section><section class="prueba" aria-labelledby="titulo-prueba"><h2 id="titulo-prueba">🧪 Prueba interactiva: El agua</h2><p>Responde las 20 preguntas y revisa tu resultado al final.</p><div class="progreso" aria-label="Progreso de la prueba"><div id="barra"></div></div><p id="contador" aria-live="polite"></p><div id="contenido-prueba"></div></section></main><script>
 const preguntas=[
-["¿Qué es el agua?","Un recurso natural","Un juguete","Un alimento",0],
-["¿Cómo es el agua limpia?","Transparente","Negra","Áspera",0],
-["¿Qué significa que el agua es insípida?","No tiene sabor","No tiene color","No tiene forma",0],
-["¿Qué significa que el agua es inodora?","No tiene olor","No tiene sabor","No tiene frío",0],
-["¿Para qué sirve el agua potable?","Para el consumo humano","Para pintar paredes","Para hacer juguetes",0],
-["¿El agua de un lago siempre se puede beber?","No, no siempre es apta para consumo humano","Sí, siempre","Solo si es azul",0],
-["¿Qué pasa con el agua líquida al cambiarla de recipiente?","Toma la forma del recipiente","Desaparece","Se vuelve hielo",0],
-["¿Cambia la cantidad de agua si la pasamos a otro recipiente?","No cambia","Se duplica","Desaparece",0],
-["¿Cuál se disuelve en agua?","La sal","El aceite","Una piedra",0],
-["¿Cuál no se disuelve en agua?","El aceite","El jugo en polvo","La sal",0],
-["¿En qué estado está el hielo?","Sólido","Líquido","Gaseoso",0],
-["¿En qué estado está el vapor de agua?","Gaseoso","Sólido","Líquido",0],
-["¿De qué están formadas las nubes?","Pequeñas gotitas de agua líquida","Solo humo","Cubitos de hielo grandes",0],
-["¿Qué ocurre con el agua líquida cuando gana calor?","Se evapora","Se congela","Se endurece",0],
-["¿Qué ocurre con el agua líquida cuando pierde calor?","Se congela","Se evapora","Desaparece",0],
-["¿Qué ocurre con el hielo cuando recibe calor?","Se derrite","Se condensa","Se vuelve gas sin pasar por líquido",0],
-["¿Qué ocurre con el vapor de agua cuando se enfría?","Se condensa","Se evapora","Se congela de inmediato",0],
-["¿Por qué cambian de estado el agua y el hielo?","Porque ganan o pierden calor","Porque cambian de color","Porque se mueven",0],
-["¿Cuál es un ejemplo de agua líquida?","Un río","La nieve","El vapor",0],
-["¿Qué puede hacer el agua de un río?","Escurrir o fluir","Tener una forma fija","Oler a nada siempre",0]
+["Si podemos ver una piedra al fondo de una pecera con agua limpia, comprobamos que el agua es...","inodora","transparente","insípida",1],
+["Una botella tiene 500 mL de agua. Si se vacía en una jarra grande, ¿qué ocurre?","El agua aumenta de cantidad","El agua toma la forma de la jarra, pero conserva su cantidad","El agua se convierte en gas",1],
+["¿Cuál situación necesita agua potable?","Regar una planta","Lavar una bicicleta","Preparar una bebida para una persona",2],
+["¿Qué pareja describe correctamente al agua limpia?","Tiene sabor y olor","Es insípida e inodora","Es sólida y gaseosa a la vez",1],
+["Al revolver sal en agua hasta que ya no se ve, la sal...","se disolvió","se congeló","se evaporó",0],
+["Una niña mezcla agua y aceite. Después de un rato, el aceite queda separado arriba. ¿Por qué?","Porque el aceite se congeló","Porque el aceite no se disuelve en agua","Porque el agua dejó de ser líquida",1],
+["¿Cuál propiedad pertenece al agua líquida?","Tiene forma propia y volumen propio","No tiene forma propia, pero tiene volumen definido","No tiene forma ni volumen definidos",1],
+["¿Cuál opción nombra correctamente un estado y un ejemplo?","Gaseoso: vapor de agua","Líquido: nieve","Sólido: río",0],
+["Un estudiante dice: “Las nubes son vapor de agua”. Según el material, ¿qué corrección es mejor?","Las nubes son solo aire","Las nubes están hechas de gotitas de agua líquida","Las nubes son cubitos de hielo grandes",1],
+["¿Qué cambio ocurre cuando un charco recibe calor del Sol durante mucho tiempo?","Condensación","Congelación","Evaporación",2],
+["Una cubetera pasa de la mesa al congelador. ¿Qué cambio ocurre en el agua?","Pasa de líquida a sólida: congelación","Pasa de sólida a líquida: derretimiento","Pasa de gaseosa a líquida: condensación",0],
+["¿Cuál ejemplo muestra condensación?","El hielo se derrite en una taza","Aparecen gotitas por fuera de un vaso muy frío","El agua hierve en una olla",1],
+["Un cubito de hielo se convierte en agua líquida. ¿Qué necesitó ganar?","Calor","Olor","Sabor",0],
+["¿Qué cambio completa correctamente la frase? Vapor de agua + frío → ...","evaporación → agua gaseosa","condensación → agua líquida","congelación → agua sólida",1],
+["¿Qué tienen en común la evaporación y el derretimiento?","Ambas ocurren cuando el agua gana calor","Ambas ocurren cuando el agua pierde calor","Ambas forman hielo",0],
+["¿Qué tienen en común la congelación y la condensación?","Las dos requieren que el agua gane calor","Las dos ocurren cuando el agua pierde calor","Las dos producen vapor",1],
+["¿Cuál secuencia muestra los estados del agua al aplicar calor al hielo?","Hielo → vapor → agua líquida","Hielo → agua líquida → vapor de agua","Hielo → agua líquida → más hielo",1],
+["¿Por qué no conviene beber directamente agua de un río o lago?","Porque puede no ser agua potable para consumo humano","Porque siempre está congelada","Porque no tiene forma",0],
+["Un río puede cambiar de camino y forma, pero sigue llevando agua. ¿Qué propiedad se observa?","El agua líquida fluye y no tiene forma propia","El agua no tiene volumen","El agua es sólida",0],
+["¿Qué explicación reúne mejor los cambios de estado del agua?","Ocurren porque el agua gana o pierde calor","Ocurren porque cambia de color","Ocurren porque se cambia de recipiente",0]
 ];
 let actual=0;const respuestas=Array(preguntas.length).fill(null);const zona=document.getElementById("contenido-prueba"),barra=document.getElementById("barra"),contador=document.getElementById("contador");
 const revisadas=Array(preguntas.length).fill(false);
