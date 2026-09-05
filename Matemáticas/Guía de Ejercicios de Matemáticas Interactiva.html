@@ -43,7 +43,8 @@ const qs=[
 {type:"28. Desafío de multiplicación",q:"Una araña tiene 8 patas. ¿Cuántas patas tienen 3 arañas?",opts:["11","16","24","32"],a:2,sol:"3 × 8 = 24 patas."},
 {type:"29. Desafío de división",q:"36 libros se ordenan en 6 estantes iguales. ¿Cuántos libros se colocan en cada estante?",opts:["5","6","7","8"],a:1,sol:"36 ÷ 6 = 6 libros por estante."},
 {type:"30. Revisión final",q:"¿Qué frase numérica resuelve: “4 equipos tienen 7 jugadores cada uno”?",opts:["4 + 7 = 11","4 × 7 = 28","28 ÷ 7 = 3","7 - 4 = 3"],a:1,sol:"Son 4 grupos de 7 jugadores: 4 × 7 = 28."}
-];\nlet current=0,answers=Array(qs.length).fill(null);
+];
+let current=0,answers=Array(qs.length).fill(null);
 function render(){const q=qs[current],answered=answers[current]!==null;document.querySelector('#bar').style.width=(current/qs.length*100)+'%';document.querySelector('#counter').textContent='Actividad '+(current+1)+' de '+qs.length;let html='<p class="type">'+q.type+'</p><h2>'+q.q+'</h2>'+(q.draw?'<div class="drawing">'+q.draw+'</div>':'')+'<div class="choices">';q.opts.forEach((o,i)=>{let cls='choice';if(answered){if(i===q.a)cls+=' correct';else if(i===answers[current])cls+=' incorrect'}let letter=String.fromCharCode(97+i)+')';html+='<button class="'+cls+'" '+(answered?'disabled':'')+' onclick="answer('+i+')"><span class="letter">'+letter+'</span>'+o+'</button>'});html+='</div><p class="feedback '+(answered?(answers[current]===q.a?'ok':'bad'):'')+'">'+(answered?(answers[current]===q.a?'¡Muy bien! 🎉 Esa alternativa es correcta.':'No era esa. La alternativa verde es la correcta.'):'')+'</p>';if(answered)html+='<button class="next" style="display:inline-block" onclick="next()">'+(current===qs.length-1?'Ver resultado y soluciones ✨':'Siguiente actividad →')+'</button>';document.querySelector('#card').innerHTML=html}
 function answer(i){answers[current]=i;render()}
 function next(){if(current<qs.length-1){current++;render();window.scrollTo({top:0,behavior:'smooth'})}else finish()}
