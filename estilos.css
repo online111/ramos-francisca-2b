@@ -34,3 +34,13 @@ body.dashboard {
   background-attachment: fixed;
 }
 body.dashboard .encabezado { text-shadow: 0 1px 0 rgba(255,255,255,.9); }
+
+/* Fondo escolar dentro de cada botón del dashboard */
+.ramo {
+  background-image: linear-gradient(rgba(255,255,255,.14), rgba(255,255,255,.14)), url("fondo-dashboard.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  text-shadow: 0 2px 3px rgba(25, 35, 55, .38);
+}
+.matematicas { background-color:#ef6c62; }.lenguaje { background-color:#8b6ad8; }.sociales { background-color:#d49432; }.naturales { background-color:#40a86b; }.frances { background-color:#3b97c7; }.ingles { background-color:#e65991; }
